@@ -146,3 +146,5 @@ $ dotnet ef dbcontext scaffold
 
 
 
+# デバッグ方法
+https://docs.microsoft.com/ja-jp/dotnet/core/tutorials/debugging-with-visual-studio-code?pivots=dotnet-6-0
