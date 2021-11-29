@@ -71,6 +71,13 @@ $ dotnet run --project [プロジェクト名]
 $ dotnet run --urls http://*:8000/
 ```
 
+### 単体テストの実行
+
+```bash
+$ dotnet test
+```
+
+
 ### global.jsonを作成
 
 ```bash
