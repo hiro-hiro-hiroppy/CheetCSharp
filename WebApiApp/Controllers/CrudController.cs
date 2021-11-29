@@ -3,49 +3,51 @@ using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using WebApiApp.Models;
 
-namespace WebApiApp.Controllers;
-
-[ApiController]
-[Route("[controller]")]
-public class CrudController : ControllerBase
+namespace WebApiApp.Controllers
 {
-    protected readonly ILogger<CrudController> _logger;
 
-    public CrudController(ILogger<CrudController> logger)
+    [ApiController]
+    [Route("[controller]")]
+    public class CrudController : ControllerBase
     {
-        this._logger = logger;
-    }
+        protected readonly ILogger<CrudController> _logger;
 
-    [HttpGet]
-    public async Task<CrudModels> Get()
-    {
-        var crud = await Task.Run(() =>
+        public CrudController(ILogger<CrudController> logger)
         {
-            return new CrudModels()
+            this._logger = logger;
+        }
+
+        [HttpGet]
+        public async Task<CrudModels> Get()
+        {
+            var crud = await Task.Run(() =>
             {
-                Id = 1,
-                CrudValue = "Get",
-                HttpStatusCode = HttpStatusCode.OK
-            };
-        });
-        return crud;
-    }
-    
-    [HttpPost("{id}")]
-    public async void Post(int id)
-    {
-        await Task.Run(() => Console.WriteLine(id));
-    }
-    
-    [HttpPut("{id}")]
-    public async void Put(int id)
-    {
-        await Task.Run(() => Console.WriteLine(id));
-    }
-    
-    [HttpDelete("{id}")]
-    public async void Delete(int id)
-    {
-        await Task.Run(() => Console.WriteLine(id));
+                return new CrudModels()
+                {
+                    Id = 1,
+                    CrudValue = "Get",
+                    HttpStatusCode = HttpStatusCode.OK
+                };
+            });
+            return crud;
+        }
+
+        [HttpPost("{id}")]
+        public async void Post(int id)
+        {
+            await Task.Run(() => Console.WriteLine(id));
+        }
+
+        [HttpPut("{id}")]
+        public async void Put(int id)
+        {
+            await Task.Run(() => Console.WriteLine(id));
+        }
+
+        [HttpDelete("{id}")]
+        public async void Delete(int id)
+        {
+            await Task.Run(() => Console.WriteLine(id));
+        }
     }
 }
