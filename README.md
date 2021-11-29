@@ -47,6 +47,26 @@ $ dotnet new webapi --name [プロジェクト名]
 $ dotnet new xunit --name [プロジェクト名]
 ```
 
+### プロジェクトを作成(AWS)
+
+```bash
+# https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/csharp-package-cli.html
+
+# AWS Lambdaのテンプレートをインストール
+$ dotnet new -i Amazon.Lambda.Templates
+# AWS Extensions for .NET CLIのインストール...ビルドに必要
+$ dotnet tool install -g Amazon.Lambda.Tools
+# AWS .NET Mock Lambda Test Tool (Preview)のインストール...テストに必要
+# .NET Core 3.1向け
+$ dotnet tool install -g Amazon.Lambda.TestTool-3.1
+
+#------------------------------------------------------------
+# AWS Lambdaのプロジェクトを作成
+$ dotnet new lambda.EmptyFunction --name [プロジェクト名]
+$ dotnet new lambda.S3 --name [プロジェクト名]
+
+```
+
 ### ビルド
 
 ```bash
