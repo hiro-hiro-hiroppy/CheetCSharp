@@ -64,7 +64,10 @@ $ dotnet tool install -g Amazon.Lambda.TestTool-3.1
 # AWS Lambdaのプロジェクトを作成
 $ dotnet new lambda.EmptyFunction --name [プロジェクト名]
 $ dotnet new lambda.S3 --name [プロジェクト名]
+$ dotnet new lambda.DynamoDB --name [プロジェクト名]
 
+$ dotnet new lambda.EmptyFunction --name MyFunction --profile hogehoge --region ap-northeast-1
+https://dotnetnew.azurewebsites.net/pack/Amazon.Lambda.Templates
 ```
 
 ### ビルド
@@ -136,7 +139,7 @@ $ dotnet tool install --local [ツール名]
 ```
 
 ## エンティティフレームワークを使う
-1. dotnet-efをインストール
+### dotnet-efをインストール
 
 ```bash
 # グローバルにインストールする時
@@ -145,7 +148,68 @@ $ dotnet tool install --global dotnet-ef
 # ローカルにインストールする時
 $ dotnet new tool-manifest
 $ dotnet tool install --local dotnet-ef
+
+# バージョンの更新
+$ dotnet tool update --global dotnet-ef
 ```
+
+### インストールの確認
+
+```bash
+$ dotnet ef
+```
+### ツールの使用
+
+コマンドは
+* プロジェクト(現在のディレクトリのプロジェクト)
+* スタートアッププロジェクト
+を参照する
+
+#### プロジェクト(現在のディレクトリのプロジェクト)
+コマンドでファイルを追加または削除する場所
+※プロジェクトは、--projectオプションをつけることで、ターゲットプロジェクトを指定できる
+
+#### スタートアッププロジェクト
+ツールによって構築され、実行されるプロジェクト
+デザイン時、接続文字列やモデルの構成など、プロジェクトに関する情報を取得する必要がある
+
+### データベースの削除
+
+```bash
+$ dotnet ef database drop
+```
+
+### データベースの更新
+
+```bash
+$ dotnet ef databse update
+```
+
+### DbContext型に関する情報を取得する
+
+```bash
+$ dotnet ef dbcontext info
+```
+
+### 使用可能なDbContext型を一覧表示
+
+```bash
+$ dotnet ef dbcontext list
+```
+
+### DbContextのコードとデータベースのエンティティ型を生成する
+
+```bash
+$ dotnet ef dbcontext scaffold
+```
+
+### 新し移行を追加する
+
+```bash
+$ dotnet ef migrations add
+```
+
+
 
 ### パッケージのインストール/アンインストール
 
