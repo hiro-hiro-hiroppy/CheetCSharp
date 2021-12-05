@@ -10,3 +10,8 @@ services:
       POSTGRES_DB: test
     ports:
       - 5432:5432
+    # dynamodb-local:
+    #   image: amazon/dynamodb-local
+    #   command: -jar DynamoDBLocal.jar -sharedDb -dbPath . -optimizeDbBeforeStartup
+    #   ports:
+    #   - 8000:8000

@@ -2,6 +2,7 @@ using System.Net;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using WebApiApp.Models;
+using MvcApp.Controllers;
 
 namespace WebApiApp.Controllers
 {
