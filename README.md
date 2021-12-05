@@ -70,6 +70,15 @@ $ dotnet new lambda.EmptyFunction --name MyFunction --profile hogehoge --region 
 https://dotnetnew.azurewebsites.net/pack/Amazon.Lambda.Templates
 ```
 
+## ソリューション
+
+```bash
+# ソリューションファイルを作成
+$ dotnet new sln
+# プロジェクトを追加
+$ dotnet sln add [プロジェクトパス]
+```
+
 ### ビルド
 
 ```bash
