@@ -4,17 +4,17 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:63248",
-      "sslPort": 44395
+      "applicationUrl": "http://localhost:13179",
+      "sslPort": 44318
     }
   },
   "profiles": {
-    "DbMigration": {
+    "EntityWebApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "https://localhost:7289;http://localhost:5289",
+      "applicationUrl": "https://localhost:7056;http://localhost:5056",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
