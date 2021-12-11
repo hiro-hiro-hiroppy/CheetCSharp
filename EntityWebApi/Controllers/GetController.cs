@@ -1,7 +1,6 @@
 using DbMigration.Entity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 
 namespace EntityWebApi.Controllers
 {
@@ -16,8 +15,9 @@ namespace EntityWebApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "Get")]
-        public async Task<List<Player>> GetAction()
+        [HttpGet]
+        [Route("Players")]
+        public async Task<List<Player>> GetPlayers()
         {
             using (var context = new _MyDbContext())
             {
@@ -31,13 +31,15 @@ namespace EntityWebApi.Controllers
                         Position = x.Position,
                         TeamId = x.TeamId,
                         SchoolId = x.SchoolId,
-                        Team = new Team { 
-                            Id = x.Team.Id, 
-                            Name = x.Team.Name 
+                        Team = new Team
+                        {
+                            Id = x.Team.Id,
+                            Name = x.Team.Name
                         },
-                        School = new School { 
-                            Id = x.School.Id
-                            , Name = x.School.Name 
+                        School = new School
+                        {
+                            Id = x.School.Id,
+                            Name = x.School.Name
                         },
                     })
                     .ToListAsync();
@@ -48,15 +50,16 @@ namespace EntityWebApi.Controllers
         }
 
         [HttpGet]
-        [Route("XYZ")]
-        public async Task<List<Team>> GetAction2()
+        [Route("Teams")]
+        public async Task<List<Team>> GetTeams()
         {
             using (var context = new _MyDbContext())
             {
                 var result = await context.Teams
                     .Include(x => x.Player)
                     .ThenInclude(x => x.School)
-                    .Select(x => new Team { 
+                    .Select(x => new Team
+                    {
                         Id = x.Id,
                         Name = x.Name,
                         Player = x.Player.Select(x => new Player
@@ -68,8 +71,7 @@ namespace EntityWebApi.Controllers
                             SchoolId = x.SchoolId,
                             School = new School
                             {
-                                Id = x.School.Id
-                            ,
+                                Id = x.School.Id,
                                 Name = x.School.Name
                             },
                         }).ToList()

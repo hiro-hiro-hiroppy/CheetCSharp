@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DbMigration.Interface;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
@@ -9,7 +10,7 @@ namespace DbMigration.Entity
     /// <summary>
     /// 学校テーブル
     /// </summary>
-    public class School
+    public class School : ISchool
     {
         /// <summary>
         /// 学校ID
@@ -25,7 +26,7 @@ namespace DbMigration.Entity
         /// <summary>
         /// 選手
         /// </summary>
-        public List<Player>? Player { get; set; }
+        public virtual ICollection<Player> Player { get; set; }
     }
 
     /// <summary>

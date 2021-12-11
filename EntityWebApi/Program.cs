@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 //Entity利用時の無限循環を解消
 //https://shuhelohelo.hatenablog.com/entry/2019/12/26/180850
 //https://gavilan.blog/2021/05/19/fixing-the-error-a-possible-object-cycle-was-detected-in-different-versions-of-asp-net-core/
-builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+//builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 //クロスオリジン要求
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";

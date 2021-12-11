@@ -1,6 +1,6 @@
 using DbMigration.Entity;
+using EntityWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
 
 namespace EntityWebApi.Controllers
 {
@@ -15,8 +15,9 @@ namespace EntityWebApi.Controllers
             _logger = logger;
         }
 
-        [HttpPost(Name = "Post")]
-        public async Task PostAction(Player player)
+        [HttpPost]
+        [Route("Player")]
+        public async Task<int> PostPlayer(PlayerModel player)
         {
             using (var context = new _MyDbContext())
             {
@@ -25,11 +26,11 @@ namespace EntityWebApi.Controllers
                     Name = player.Name,
                     Position = player.Position,
                     TeamId = player.TeamId,
-                    SchoolId = player.SchoolId
+                    SchoolId = player.SchoolId,
                 });
 
-                context.SaveChanges();
-                return;
+                await context.SaveChangesAsync();
+                return result.Entity.Id;
             }
         }
     }

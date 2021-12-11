@@ -1,4 +1,5 @@
 ﻿using DbMigration.Enum;
+using DbMigration.Interface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,7 +11,7 @@ namespace DbMigration.Entity
     /// <summary>
     /// 選手テーブル
     /// </summary>
-    public class Player
+    public class Player : IPlayer
     {
         /// <summary>
         /// 選手ID
@@ -41,12 +42,12 @@ namespace DbMigration.Entity
         /// <summary>
         /// チーム
         /// </summary>
-        public Team? Team { get; set; }
+        public virtual Team Team { get; set; }
 
         /// <summary>
         /// 出身校
         /// </summary>
-        public School? School { get; set; }
+        public virtual School School { get; set; }
     }
 
     /// <summary>
@@ -84,10 +85,6 @@ namespace DbMigration.Entity
             builder.Property(player => player.SchoolId).IsRequired();
 
             //外部キー制約の設定
-            builder.HasIndex(player => player.TeamId);
-            builder.HasIndex(player => player.SchoolId);
-
-
             builder.HasOne(player => player.Team)
                 .WithMany(team => team.Player)
                 .HasForeignKey(player => player.TeamId);

@@ -25,7 +25,7 @@ namespace DbMigration.Entity
         /// <summary>
         /// 所属選手
         /// </summary>
-        public List<Player>? Player { get; set; }
+        public virtual ICollection<Player> Player { get; set; }
     }
 
     /// <summary>
