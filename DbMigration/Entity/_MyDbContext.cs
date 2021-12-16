@@ -19,6 +19,7 @@ namespace DbMigration.Entity
         public DbSet<Team> Teams { get; set; }
         public DbSet<Player> Players { get; set; } 
         public DbSet<School> Schools { get; set; }
+        public DbSet<User> Users { get; set; }
 
         /// <summary>
         /// テーブル定義
@@ -30,6 +31,7 @@ namespace DbMigration.Entity
             new PlayerConfiguration(modelBuilder.Entity<Player>());
             new TeamConfiguration(modelBuilder.Entity<Team>());
             new SchoolConfiguration(modelBuilder.Entity<School>());
+            new UserConfiguration(modelBuilder.Entity<User>());
         }
 
         /// <summary>

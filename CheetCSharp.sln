@@ -21,6 +21,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.Simple.Lambda", "AWS.Si
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.Simple.Lambda.Tests", "AWS.Simple.Lambda.Tests\AWS.Simple.Lambda.Tests.csproj", "{689EC6C8-7FEA-4BBF-98F3-E6787546319D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtWebApi", "JwtWebApi\JwtWebApi.csproj", "{56150F8D-114D-49FB-93C6-F83F3DAF9C5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{689EC6C8-7FEA-4BBF-98F3-E6787546319D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{689EC6C8-7FEA-4BBF-98F3-E6787546319D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{689EC6C8-7FEA-4BBF-98F3-E6787546319D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56150F8D-114D-49FB-93C6-F83F3DAF9C5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56150F8D-114D-49FB-93C6-F83F3DAF9C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56150F8D-114D-49FB-93C6-F83F3DAF9C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56150F8D-114D-49FB-93C6-F83F3DAF9C5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

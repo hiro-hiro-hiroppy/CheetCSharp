@@ -12,7 +12,7 @@ namespace Configure
             /// <summary>
             /// データベースURL
             /// </summary>
-            public string ServerUrl { get; set; }
+            public string ServerUrl { get; set; } = string.Empty;
 
             /// <summary>
             /// ポート番号
@@ -22,17 +22,17 @@ namespace Configure
             /// <summary>
             /// ユーザー名
             /// </summary>
-            public string UserName { get; set; }
+            public string UserName { get; set; } = string.Empty;
 
             /// <summary>
             /// パスワード
             /// </summary>
-            public string Password { get; set; }
+            public string Password { get; set; } = string.Empty;
 
             /// <summary>
             /// データベース名
             /// </summary>
-            public string DataBaseName { get; set; }
+            public string DataBaseName { get; set; } = string.Empty;
         }
 
         /// <summary>
