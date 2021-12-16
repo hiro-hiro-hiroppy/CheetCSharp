@@ -1,5 +1,4 @@
 using DbMigration.Entity;
-using DbMigration.Interface;
 using EntityWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +17,7 @@ namespace EntityWebApi.Controllers
 
         [HttpPut]
         [Route("Player/{id}")]
-        public async Task<int> PutPlayer(int id, PlayerModel player)
+        public async Task<int> PutPlayer(int id, PlayerDto.PlayerPutDto player)
         {
             if(id == 0)
             {
@@ -46,7 +45,7 @@ namespace EntityWebApi.Controllers
 
         [HttpPut]
         [Route("Player2/{id}")]
-        public async Task<int> PutPlayer2(int id, PlayerModel player)
+        public async Task<int> PutPlayer2(int id, PlayerDto.PlayerPutDto player)
         {
             if (id == 0)
             {

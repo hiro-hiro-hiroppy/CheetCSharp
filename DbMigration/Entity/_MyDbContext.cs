@@ -11,12 +11,13 @@ namespace DbMigration.Entity
     /// </summary>
     public class _MyDbContext : DbContext
     {
+#pragma warning disable CS8618 // null 非許容のフィールドには、コンストラクターの終了時に null 以外の値が入っていなければなりません。Null 許容として宣言することをご検討ください。
         public _MyDbContext() { }
-
         public _MyDbContext(DbContextOptions<_MyDbContext> options) : base(options) { }
+#pragma warning restore CS8618 // null 非許容のフィールドには、コンストラクターの終了時に null 以外の値が入っていなければなりません。Null 許容として宣言することをご検討ください。
 
         public DbSet<Team> Teams { get; set; }
-        public DbSet<Player> Players { get; set; }
+        public DbSet<Player> Players { get; set; } 
         public DbSet<School> Schools { get; set; }
 
         /// <summary>

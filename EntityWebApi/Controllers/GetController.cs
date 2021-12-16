@@ -1,4 +1,5 @@
 using DbMigration.Entity;
+using EntityWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,64 +18,30 @@ namespace EntityWebApi.Controllers
 
         [HttpGet]
         [Route("Players")]
-        public async Task<List<Player>> GetPlayers()
+        public async Task<List<PlayerDto.PlayerGetDto>> GetPlayers()
         {
             using (var context = new _MyDbContext())
             {
                 var result = await context.Players
                     .Include(x => x.Team)
                     .Include(x => x.School)
-                    .Select(x => new Player
+                    .Select(x => new PlayerDto.PlayerGetDto
                     {
                         Id = x.Id,
                         Name = x.Name,
                         Position = x.Position,
                         TeamId = x.TeamId,
                         SchoolId = x.SchoolId,
-                        Team = new Team
+                        Team = new TeamDto.TeamMasterDto
                         {
                             Id = x.Team.Id,
                             Name = x.Team.Name
                         },
-                        School = new School
+                        School = new SchoolDto.SchoolMasterDto
                         {
                             Id = x.School.Id,
                             Name = x.School.Name
                         },
-                    })
-                    .ToListAsync();
-                ;
-
-                return result;
-            }
-        }
-
-        [HttpGet]
-        [Route("Teams")]
-        public async Task<List<Team>> GetTeams()
-        {
-            using (var context = new _MyDbContext())
-            {
-                var result = await context.Teams
-                    .Include(x => x.Player)
-                    .ThenInclude(x => x.School)
-                    .Select(x => new Team
-                    {
-                        Id = x.Id,
-                        Name = x.Name,
-                        Player = x.Player.Select(x => new Player
-                        {
-                            Id = x.Id,
-                            Name = x.Name,
-                            Position = x.Position,
-                            TeamId = x.TeamId,
-                            SchoolId = x.SchoolId,
-                            School = new School
-                            {
-                                Id = x.School.Id,
-                                Name = x.School.Name
-                            },
-                        }).ToList()
                     })
                     .ToListAsync();
                 ;

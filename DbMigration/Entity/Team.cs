@@ -20,12 +20,12 @@ namespace DbMigration.Entity
         /// <summary>
         /// チーム名
         /// </summary>
-        public string? Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         /// <summary>
         /// 所属選手
         /// </summary>
-        public virtual ICollection<Player> Player { get; set; }
+        public virtual List<Player> Player { get; set; } = new List<Player> { };
     }
 
     /// <summary>

@@ -1,5 +1,4 @@
 ﻿using DbMigration.Enum;
-using DbMigration.Interface;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,7 +10,7 @@ namespace DbMigration.Entity
     /// <summary>
     /// 選手テーブル
     /// </summary>
-    public class Player : IPlayer
+    public class Player
     {
         /// <summary>
         /// 選手ID
@@ -22,7 +21,7 @@ namespace DbMigration.Entity
         /// <summary>
         /// 選手名
         /// </summary>
-        public string? Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         /// <summary>
         /// ポジション
@@ -42,12 +41,12 @@ namespace DbMigration.Entity
         /// <summary>
         /// チーム
         /// </summary>
-        public virtual Team Team { get; set; }
+        public virtual Team Team { get; set; } = new Team();
 
         /// <summary>
         /// 出身校
         /// </summary>
-        public virtual School School { get; set; }
+        public virtual School School { get; set; } = new School();
     }
 
     /// <summary>

@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.ApiGateway.Lambda", "AW
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.ApiGateway.Lambda.Tests", "AWS.ApiGateway.Lambda.Tests\AWS.ApiGateway.Lambda.Tests.csproj", "{7E4E2D5B-0828-4983-9E40-A6DC2295631B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.Simple.Lambda", "AWS.Simple.Lambda\AWS.Simple.Lambda.csproj", "{77BA6A62-0C14-4963-A91D-BA4E95A2A712}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.Simple.Lambda.Tests", "AWS.Simple.Lambda.Tests\AWS.Simple.Lambda.Tests.csproj", "{689EC6C8-7FEA-4BBF-98F3-E6787546319D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{7E4E2D5B-0828-4983-9E40-A6DC2295631B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E4E2D5B-0828-4983-9E40-A6DC2295631B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E4E2D5B-0828-4983-9E40-A6DC2295631B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77BA6A62-0C14-4963-A91D-BA4E95A2A712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77BA6A62-0C14-4963-A91D-BA4E95A2A712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77BA6A62-0C14-4963-A91D-BA4E95A2A712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77BA6A62-0C14-4963-A91D-BA4E95A2A712}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689EC6C8-7FEA-4BBF-98F3-E6787546319D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689EC6C8-7FEA-4BBF-98F3-E6787546319D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689EC6C8-7FEA-4BBF-98F3-E6787546319D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689EC6C8-7FEA-4BBF-98F3-E6787546319D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

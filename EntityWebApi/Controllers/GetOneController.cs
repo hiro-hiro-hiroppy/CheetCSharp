@@ -1,4 +1,5 @@
 using DbMigration.Entity;
+using EntityWebApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace EntityWebApi.Controllers
 
         [HttpGet]
         [Route("Player/{id}")]
-        public async Task<Player?> GetOnePlayer(int id)
+        public async Task<PlayerDto.PlayerGetDto?> GetOnePlayer(int id)
         {
             using (var context = new _MyDbContext())
             {
@@ -26,19 +27,19 @@ namespace EntityWebApi.Controllers
                     .Include(x => x.Team)
                     .Include(x => x.School)
                     .Where(x => x.Id == id)
-                    .Select(x => new Player
+                    .Select(x => new PlayerDto.PlayerGetDto
                     {
                         Id = x.Id,
                         Name = x.Name,
                         Position = x.Position,
                         TeamId = x.TeamId,
                         SchoolId = x.SchoolId,
-                        Team = new Team
+                        Team = new TeamDto.TeamMasterDto
                         {
                             Id = x.Team.Id,
                             Name = x.Team.Name
                         },
-                        School = new School
+                        School = new SchoolDto.SchoolMasterDto
                         {
                             Id = x.School.Id,
                             Name = x.School.Name

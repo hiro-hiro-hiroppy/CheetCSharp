@@ -1,4 +1,4 @@
 cd ./_dockerWindows
-docker rm `docker ps -a -q`
+for /f "usebackq" %x in (`docker ps -a -q`) do docker rm -f %x
 docker-compose up -d
 pause

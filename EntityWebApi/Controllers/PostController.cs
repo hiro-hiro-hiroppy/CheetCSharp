@@ -17,7 +17,7 @@ namespace EntityWebApi.Controllers
 
         [HttpPost]
         [Route("Player")]
-        public async Task<int> PostPlayer(PlayerModel player)
+        public async Task<int> PostPlayer(PlayerDto.PlayerPostDto player)
         {
             using (var context = new _MyDbContext())
             {
