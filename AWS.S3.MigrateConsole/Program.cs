@@ -22,7 +22,7 @@ namespace AWS.S3.MigrateConsole
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+               Console.WriteLine(e);
                 processResult = ProcessError;
             }
 

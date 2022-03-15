@@ -16,6 +16,8 @@ services:
       - SERVICES=s3:5000
       - DEFAULT_REGION=ap-northeast-1
       - HOSTNAME=localhost
+    ports:
+      - 5000:5000
   dynamodblocal:
     image: amazon/dynamodb-local
     networks:

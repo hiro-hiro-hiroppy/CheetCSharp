@@ -143,6 +143,7 @@ namespace AWS.DynamoDB.Entity.MigrateConsole
             {
                 TableName = tableName,
                 KeySchema = localKeySchema,
+                AttributeDefinitions = attrDefine,
                 ProvisionedThroughput = new ProvisionedThroughput { ReadCapacityUnits = 10, WriteCapacityUnits = 10 },
                 GlobalSecondaryIndexes = gsiList,
                 LocalSecondaryIndexes = lsiList,

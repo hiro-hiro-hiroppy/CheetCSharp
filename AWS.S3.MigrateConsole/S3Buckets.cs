@@ -14,7 +14,7 @@ namespace AWS.S3.MigrateConsole
             new BasicAWSCredentials("accessKey", "secretKey"),
             new AmazonS3Config
             {
-                ServiceURL = "http://localhost:5000/",
+                ServiceURL = "http://localhost:5000",
                 UseHttp = true,
                 ForcePathStyle = true,
                 AuthenticationRegion = "ap-northeast-1",

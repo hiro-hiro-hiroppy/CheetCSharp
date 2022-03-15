@@ -28,9 +28,10 @@
 
 
 ## 2. 本ソリューションの環境構築方法
-
-
-
+1. DockerStart.batを起動
+2. 途中で止まってしまう？場合にはdocker-composeから下を実行する
+3. dynamodb-local用に以下記事を参考にしてGUIで見れるようにした方がいいかも
+https://qiita.com/gzock/items/e0225fd71917c234acce
 
 ## 3. nugetのパッケージ
 https://www.nuget.org/

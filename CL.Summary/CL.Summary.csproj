@@ -4,15 +4,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="DateTime\" />
-    <Folder Include="DB\" />
-    <Folder Include="File\" />
-    <Folder Include="Exception\" />
-    <Folder Include="Json\" />
-    <Folder Include="Api\" />
-    <Folder Include="Parse\" />
-    <Folder Include="Regex\" />
-  </ItemGroup>
-
 </Project>

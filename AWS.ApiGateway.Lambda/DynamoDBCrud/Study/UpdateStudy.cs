@@ -20,8 +20,6 @@ namespace AWS.ApiGateway.Lambda.DynamoDBCrud.Study
         {
             var dbContext = new DynamoDBContext(client);
             var record = await dbContext.LoadAsync<dynamoEntity.Study>(hashKey: request.Id, rangeKey: request.StudyEndTime);
-
-            // 更新
             record.StudyPlace = request.StudyPlace;
             record.Subjects = request.Subjects.Select(x => new dynamoModel.Subject
             {

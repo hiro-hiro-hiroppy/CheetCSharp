@@ -14,7 +14,17 @@ namespace AWS.ApiGateway.Lambda
 {
     public class DynamoDBCrudFunction
     {
-        private static readonly AmazonDynamoDBClient awsClient = new AmazonDynamoDBClient();
+        private static AmazonDynamoDBClient awsClient;
+        
+        public DynamoDBCrudFunction()
+        {
+            awsClient = new AmazonDynamoDBClient(
+                new AmazonDynamoDBConfig
+                {
+                    ServiceURL = "http://localhost:8000",
+                    UseHttp = true
+                });
+        }
 
         /// <summary>
         /// DynamoDB‚Ö‚ÌCRUD‹@”\ Lambda
@@ -25,15 +35,16 @@ namespace AWS.ApiGateway.Lambda
         {
             var studyRequest = JsonConvert.DeserializeObject<Study>(request.Body);
             var status = HttpStatusCode.BadRequest;
+            Study responseBody = null;
 
             switch(studyRequest.CrudType)
             {
                 case Enum.EnumCrudType.CrudType.Create:
-                    status = await new CreateStudy().CreateRecord(studyRequest, awsClient);
+                    status= await new CreateStudy().CreateRecord(studyRequest, awsClient);
                     break;
 
                 case Enum.EnumCrudType.CrudType.Read:
-                    status = await new ReadStudy().ReadRecord(studyRequest, awsClient);
+                    (status, responseBody) = await new ReadStudy().ReadRecord(studyRequest, awsClient);
                     break;
 
                 case Enum.EnumCrudType.CrudType.Update:
@@ -51,7 +62,7 @@ namespace AWS.ApiGateway.Lambda
             return new APIGatewayProxyResponse
             {
                 StatusCode = (int)status,
-                Body = "DynamoDB Crud Function",
+                Body = responseBody != null ? JsonConvert.SerializeObject(responseBody) : null,
                 Headers = new Dictionary<string, string> { { "Content-Type", "text/plain" } }
             };
         }
