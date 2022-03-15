@@ -1,15 +1,42 @@
 # CheetCSharp
 
 ## 目次
-1. nugetのパッケージ
-2. Visual Studio CodeでC#の環境を整える
-3. 
+1. 本ソリューションの内容
+2. 本ソリューションの環境構築方法
+3. nugetのパッケージ
+4. Visual Studio CodeでC#の環境を整える方法
 
 
-## nugetのパッケージ
+## 1. 本ソリューションの内容
+
+|プロジェクト名|内容|
+|:-------------|:---|
+|AWS.ApiGateway.Lambda|APIGatewayを使用したLambdaのサンプル|
+|AWS.ApiGateway.Lambda.Tests|AWS.ApiGateway.Lambdaの単体テスト|
+|AWS.DynamoDB.Entity|DynamoDBのテーブル情報|
+|AWS.DynamoDB.Entity.MigrateConsole|DynamoDBのマイグレーション|
+|AWS.S3.Lambda|S3イベントハンドラーのサンプル|
+|AWS.S3.Lambda.Tests|AWS.S3.Lambdaの単体テスト|
+|AWS.S3.MigrateConsole|AWS.S3.Lambdaの単体テスト|
+|CL.Summary|汎用処理まとめ|
+|CL.Summary.Tests|汎用処理まとめの単体テスト|
+|Entity.MyDbContext|PostgreSQLのテーブル情報|
+|Entity.WebAPI|WebAPIのサンプル|
+|Lib.ClosedXML|ライブラリClosedXMLのクラスライブラリ|
+|Lib.JWT|ライブラリJWTのクラスライブラリ|
+|Lib.JWT.Tests|ライブラリJWTの単体テスト|
+
+
+## 2. 本ソリューションの環境構築方法
+
+
+
+
+## 3. nugetのパッケージ
 https://www.nuget.org/
 
-## Visual Studio CodeでC#の環境を整える
+
+## 4. Visual Studio CodeでC#の環境を整える方法
 
 参考URL
 https://zenn.dev/midoliy/articles/9e3cff958ff89ba151de
