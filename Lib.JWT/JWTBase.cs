@@ -6,9 +6,6 @@ namespace Lib.JWT
 {
     public class JWTBase
     {
-        public JWTBase()
-        {
 
-        }
     }
 }
