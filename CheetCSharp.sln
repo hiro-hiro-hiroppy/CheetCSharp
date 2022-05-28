@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.ApiGateway.Lambda.Tests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity.WebAPI", "Entity.WebAPI\Entity.WebAPI.csproj", "{0FA87730-86F5-40B5-B90D-FF72F0139548}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.ClosedXML", "Lib.ClosedXML\Lib.ClosedXML.csproj", "{4203DE0D-5107-4F18-8D12-6C6550C37341}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib_ClosedXML", "Lib_ClosedXML\Lib_ClosedXML.csproj", "{4203DE0D-5107-4F18-8D12-6C6550C37341}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.JWT", "Lib.JWT\Lib.JWT.csproj", "{F06A02FF-FB79-4376-B62E-2604F8AB2FA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib_JWT", "Lib_JWT\Lib_JWT.csproj", "{F06A02FF-FB79-4376-B62E-2604F8AB2FA7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.S3.Lambda", "AWS.S3.Lambda\AWS.S3.Lambda.csproj", "{64117003-1CBE-4F10-B29B-4E5D0EE03A56}"
 EndProject
@@ -23,13 +23,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CL.Summary.Tests", "CL.Summ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entity.MyDbContext", "Entity.MyDbContext\Entity.MyDbContext.csproj", "{C5A9EB30-C4C0-407D-87A4-2456A4E36309}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.JWT.Tests", "Lib.JWT.Tests\Lib.JWT.Tests.csproj", "{32A6AFC6-64B1-47D5-844D-2976E5EECAA4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.DynamoDB.Entity", "AWS.DynamoDB.Entity\AWS.DynamoDB.Entity.csproj", "{24DD27BC-1C71-4170-B659-73CE95FD54EE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.DynamoDB.Entity.MigrateConsole", "AWS.DynamoDB.Entity.MigrateConsole\AWS.DynamoDB.Entity.MigrateConsole.csproj", "{C737D4BD-FF9D-4B50-9A65-EE72A5FE07C4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AWS.S3.MigrateConsole", "AWS.S3.MigrateConsole\AWS.S3.MigrateConsole.csproj", "{8FCAF8FF-74A3-4775-9072-1964F87AB19B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib_NLog_Console", "Lib_NLog_Console\Lib_NLog_Console.csproj", "{35028096-9545-413D-8D83-5F5B9D83250C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib_Serilog_Console", "Lib_Serilog_Console\Lib_Serilog_Console.csproj", "{9F24BC3E-1720-4EA7-A4D5-7D15073637EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib_Moq_XUnit", "Lib_Moq_XUnit\Lib_Moq_XUnit.csproj", "{F5F6A0D1-22AE-4D78-8995-09EFE3A34F05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,10 +81,6 @@ Global
 		{C5A9EB30-C4C0-407D-87A4-2456A4E36309}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5A9EB30-C4C0-407D-87A4-2456A4E36309}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5A9EB30-C4C0-407D-87A4-2456A4E36309}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32A6AFC6-64B1-47D5-844D-2976E5EECAA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32A6AFC6-64B1-47D5-844D-2976E5EECAA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32A6AFC6-64B1-47D5-844D-2976E5EECAA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32A6AFC6-64B1-47D5-844D-2976E5EECAA4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24DD27BC-1C71-4170-B659-73CE95FD54EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{24DD27BC-1C71-4170-B659-73CE95FD54EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24DD27BC-1C71-4170-B659-73CE95FD54EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -93,6 +93,18 @@ Global
 		{8FCAF8FF-74A3-4775-9072-1964F87AB19B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FCAF8FF-74A3-4775-9072-1964F87AB19B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FCAF8FF-74A3-4775-9072-1964F87AB19B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35028096-9545-413D-8D83-5F5B9D83250C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35028096-9545-413D-8D83-5F5B9D83250C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35028096-9545-413D-8D83-5F5B9D83250C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35028096-9545-413D-8D83-5F5B9D83250C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F24BC3E-1720-4EA7-A4D5-7D15073637EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F24BC3E-1720-4EA7-A4D5-7D15073637EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F24BC3E-1720-4EA7-A4D5-7D15073637EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F24BC3E-1720-4EA7-A4D5-7D15073637EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5F6A0D1-22AE-4D78-8995-09EFE3A34F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5F6A0D1-22AE-4D78-8995-09EFE3A34F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5F6A0D1-22AE-4D78-8995-09EFE3A34F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5F6A0D1-22AE-4D78-8995-09EFE3A34F05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

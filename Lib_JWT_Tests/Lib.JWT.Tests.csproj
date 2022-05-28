@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Lib.JWT\Lib.JWT.csproj" />
+    <ProjectReference Include="..\Lib.JWT\Lib._JWT.csproj" />
   </ItemGroup>
 
 </Project>
